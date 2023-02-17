@@ -1,7 +1,7 @@
-import * as THREE from 'three';
+import * as THREE from "three";
 
-import vs from './glsl/core.vs';
-import fs from './glsl/core.fs';
+import vs from "./glsl/Core.vs";
+import fs from "./glsl/Core.fs";
 
 export default class Core extends THREE.Mesh {
   constructor() {
@@ -12,11 +12,11 @@ export default class Core extends THREE.Mesh {
     const material = new THREE.RawShaderMaterial({
       uniforms: {
         time: {
-          value: 0
+          value: 0,
         },
         noiseTex: {
-          value: null
-        }
+          value: null,
+        },
       },
       vertexShader: vs,
       fragmentShader: fs,
@@ -24,7 +24,7 @@ export default class Core extends THREE.Mesh {
 
     // Create Object3D
     super(geometry, material);
-    this.name = 'Core';
+    this.name = "Core";
     this.acceleration = new THREE.Vector3();
     this.anchor = new THREE.Vector3();
   }
